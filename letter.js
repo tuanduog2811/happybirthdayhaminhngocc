@@ -33,7 +33,7 @@ window.LETTER = {
      Bỏ ảnh của bạn vào thư mục assets rồi ghi tên file vào đây.
      Ví dụ: "assets/chung-minh.jpg"
      Để trống "" nếu không muốn hiện ảnh. */
-  photo:        "assets/photo.jpg",
+  photo:        "assets/anhletter.jpg",
   photoCaption: "17.09.2026",
 
   /* --- NHẠC ---
