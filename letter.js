@@ -11,30 +11,30 @@ window.LETTER = {
 
   /* --- Đầu thư --- */
   place:    "Hà Nội",
-  date:     "16.09.2026",
+  date:     "17.09.2026",
   greeting: "Gửi em,",
 
   /* --- Nội dung thư ---
      Mỗi dòng trong dấu ngoặc kép là một đoạn văn.
      Thêm đoạn: viết thêm một dòng "..." và nhớ dấu phẩy ở dòng trước. */
   paragraphs: [
-    "Sinh nhật em năm nay anh không mua được món quà nào thật to, nên anh viết thư. Chữ thì không gói lại được, nhưng anh nghĩ em sẽ giữ nó lâu hơn một cái hộp.",
+    "Chúc mừng sinh nhật Minh Ngọc - iu dấu của anhh <3 Chúc em tuổi mới luôn vui vẻ, hạnh phúc và những điều tốt đẹp luôn đến bên em (anh nè :>>>).",
 
-    "Cảm ơn em vì đã đi cùng anh qua một năm nữa, cả những ngày vui lẫn những ngày em phải nhịn anh. Anh nhớ hết, không sót ngày nào.",
+    "Cảm ơn em vì đã đi cùng anh gần một năm qua nèe.  Đây là lần đầu đón sinh nhật em cùng em áaa và sẽ có thêm nhiều nhiều lần đón sinh nhật cùng em nữa ạaaa.",
 
-    "Chúc em tuổi mới luôn được cưng chiều, ăn ngon, ngủ đủ, và bớt lo nghĩ đi một chút. Phần còn lại để anh lo."
+    "Yêu em nhìuuu <3"
   ],
 
   /* --- Cuối thư --- */
   signLabel: "Thương em nhiều,",
-  signature: "Anh",
+  signature: "DAT",
 
   /* --- ẢNH (góc dưới bên trái lá thư) ---
      Bỏ ảnh của bạn vào thư mục assets rồi ghi tên file vào đây.
      Ví dụ: "assets/chung-minh.jpg"
      Để trống "" nếu không muốn hiện ảnh. */
   photo:        "assets/photo.jpg",
-  photoCaption: "20.10.2025",
+  photoCaption: "17.09.2026",
 
   /* --- NHẠC ---
      Tên file nhạc trong thư mục assets. Nhạc tự phát ngay khi mở thư.
