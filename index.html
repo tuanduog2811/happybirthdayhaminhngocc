@@ -87,7 +87,7 @@
 
   .foot{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-top:22px;}
   .photo{
-    margin:0;flex:0 0 auto;width:clamp(104px,30%,140px);
+    margin:0;flex:0 0 auto;width:clamp(132px,38%,190px);
     background:#FFF;padding:7px 7px 24px;border-radius:2px;
     box-shadow:0 8px 20px rgba(90,60,70,.26);
     transform:rotate(-4deg);transform-origin:bottom left;
@@ -259,20 +259,16 @@ if (!reduce){
 
 /* ---------- nhạc ---------- */
 let audio = null;
+let mutedByUser = false;
+let pausedByHidden = false;
+
 function startMusic(){
-  if (!L.music) return;
+  if (!L.music || audio) return;
   audio = new Audio(L.music);
   audio.loop = true;
-  audio.volume = 0;
+  audio.volume = typeof L.volume === "number" ? L.volume : .75;
   audio.play().then(() => {
     $("btnMute").hidden = false;
-    const target = typeof L.volume === "number" ? L.volume : .75;
-    let v = 0;
-    const fade = setInterval(() => {
-      v = Math.min(target, v + target/30);
-      audio.volume = v;
-      if (v >= target) clearInterval(fade);
-    }, 60);
   }).catch(() => {
     $("btnMute").hidden = false;
     $("btnMute").textContent = "♫ Bật nhạc";
@@ -281,8 +277,22 @@ function startMusic(){
 }
 $("btnMute").addEventListener("click", () => {
   if (!audio) return startMusic();
-  audio.paused ? audio.play() : audio.pause();
+  if (audio.paused){ audio.play(); mutedByUser = false; }
+  else { audio.pause(); mutedByUser = true; }
   $("btnMute").textContent = audio.paused ? "♫ Bật nhạc" : "♫ Tắt nhạc";
+});
+
+/* Một số trình duyệt trong app (Zalo, Messenger, Facebook...) tải ngầm
+   trang ở chế độ ẩn trước khi hiện ra, khiến 2 bản nhạc chạy chồng lên
+   nhau nghe như bị lặp. Tạm dừng khi trang đang ẩn, phát lại khi hiện. */
+document.addEventListener("visibilitychange", () => {
+  if (!audio) return;
+  if (document.hidden){
+    if (!audio.paused){ audio.pause(); pausedByHidden = true; }
+  } else if (pausedByHidden && !mutedByUser){
+    audio.play().catch(() => {});
+    pausedByHidden = false;
+  }
 });
 
 /* ---------- đánh máy ---------- */
@@ -362,6 +372,7 @@ $("btnClose").addEventListener("click", () => {
     skipped = false; opened = false;
     $("btnClose").hidden = true;
     if (audio){ audio.pause(); audio = null; $("btnMute").hidden = true; $("btnMute").textContent = "♫ Tắt nhạc"; }
+    mutedByUser = false; pausedByHidden = false;
   }, 420);
 });
 addEventListener("resize", resizeCard);
