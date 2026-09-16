@@ -20,7 +20,7 @@ window.LETTER = {
   paragraphs: [
     "Chúc mừng sinh nhật Minh Ngọc - iu dấu của anhh <3 Chúc em tuổi mới luôn vui vẻ, hạnh phúc và những điều tốt đẹp luôn đến bên em (anh nè :>>>).",
 
-    "Cảm ơn em vì đã đi cùng anh gần một năm qua nèe.  Đây là lần đầu đón sinh nhật em cùng em áaa và sẽ có thêm nhiều nhiều lần đón sinh nhật cùng em nữa ạaaa.",
+    "Cảm ơn em vì đã đi cùng anh gần một năm qua nèe.  Đây là lần đầu đón sinh nhật em cùng em áaa và sẽ có thêm nhiều nhiều lần đón sinh nhật cùng em nữa ạaaa. Anh cóa 1 món quà sn cho em đóa, hẹn gặp em tối nay nhé :>",
 
     "Yêu em nhìuuu <3"
   ],
